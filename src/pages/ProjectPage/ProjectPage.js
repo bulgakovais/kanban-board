@@ -1,6 +1,7 @@
 
 import styles from './ProjectPage.module.css'
-import { Sidebar, Header, Project } from "../../components"
+import { Sidebar, Header } from "../../components"
+import { Outlet } from 'react-router-dom'
 
 
 
@@ -13,7 +14,7 @@ export const ProjectPage = () => {
             </div>
             <div className={styles.project_container}>
                 <Header />
-                <Project />
+                <Outlet />
             </div>
         </div>)
 }

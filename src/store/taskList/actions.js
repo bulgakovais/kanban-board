@@ -23,12 +23,7 @@ export const setTaskError = (error) => ({
     payload: error
 })
 
-/** 
-       * Отправляет запрос к API
-       * Получает конкретного пользователя по id
-       * Передает в стор пользователя || ошибку
-       * @param {string} id - id пользователя
-       */
+
 export const getTaskListToId = (id) => async (dispatch) => {
     try {
         const list = projectLists.filter(el => el.id === id)

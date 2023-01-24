@@ -5,14 +5,13 @@ import { setTaskList } from "../../store/taskList/actions";
 import { onValue, update, remove, set } from "firebase/database"
 import { getTaskListRefById, projectTaskListRef } from "../../services/firebase";
 
-import { projectLists } from "../../store/constants";
+
 import { getTaskListFromState } from "../../store/taskList/selectors";
 
 
 export const Project = () => {
     const dispatch = useDispatch()
-    const selectorId = useParams()
-    console.log('selectorId: ', selectorId);
+    const selectorURL = useParams()
 
 
     /**
@@ -28,7 +27,7 @@ export const Project = () => {
             snapShots.forEach(snapshot => {
                 newTaskList.push(snapshot.val())
             })
-            newTaskList = newTaskList.filter(el => el.id === Number(selectorId.id))
+            newTaskList = newTaskList.filter(el => el.id === Number(selectorURL.id))
             console.log('newTaskList: ', newTaskList);
             if (!newTaskList) {
                 return newTaskList = []
@@ -36,7 +35,7 @@ export const Project = () => {
             dispatch(setTaskList(newTaskList))
         })
         return unsubscribe
-    }, [selectorId])
+    }, [selectorURL])
 
     const taskList = useSelector(getTaskListFromState)
 

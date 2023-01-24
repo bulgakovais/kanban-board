@@ -6,25 +6,25 @@ export const projects = [
         id: 1,
         name: 'Электротовары',
         projectListsId: 1,
-        status: 'inWork'
+        status: 'В работе'
     },
     {
         id: 2,
         name: 'Лесхозснаб',
         projectListsId: 2,
-        status: 'inWork'
+        status: 'В работе'
     },
     {
         id: 3,
         name: 'Посуда-сити',
         projectListsId: 3,
-        status: 'inWork'
+        status: 'В работе'
     },
     {
         id: 4,
         name: 'Автошкола "Автолицей"',
         projectListsId: 4,
-        status: 'done'
+        status: 'Завершено'
     }
 ]
 
