@@ -5,7 +5,7 @@ import { setTaskList } from "../../store/taskList/actions";
 import { onValue, update, remove, set } from "firebase/database"
 import { getTaskListRefById, projectTaskListRef } from "../../services/firebase";
 
-import { projectLists } from "../../store/constants";
+
 import { getTaskListFromState } from "../../store/taskList/selectors";
 
 
