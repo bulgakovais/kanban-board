@@ -34,7 +34,7 @@ export const Sidebar = () => {
             </div>
 
             <ul className={styles.groupMenu}>
-                <li className={styles.subHeadering}>Избранное</li>
+                <li key='favorite' className={styles.subHeadering}>Избранное</li>
                 {projects.map((el) => (
 
                     <div className='padding'><li
@@ -42,9 +42,8 @@ export const Sidebar = () => {
                         className={classNames(styles.menuItem, styles.favoriteItem)}
                         onClick={e => checkToProject(e, el.id)}
                     >
-                        {el.status === 'inWork' ? <p className={styles.circle} />
-                            : <p className={classNames(styles.circle, styles.circleDone)} />}
-
+                        {el.status === 'В работе' ? <p className={'circle'} />
+                            : <p className={classNames('circle', 'circleDone')} />}
                         {el.name}
                     </li></div>
                 ))}
@@ -55,10 +54,16 @@ export const Sidebar = () => {
             </ul>
 
             <ul className={styles.groupMenu}>
-                <li className={styles.subHeadering}>Команды</li>
-                <div className='padding'><li className={classNames(styles.verticalArrow, styles.menuItem)}>Программисты</li></div>
-                <div className='padding'><li className={classNames(styles.verticalArrow, styles.menuItem)}>Маркетологи</li></div>
-                <div className='padding'><li className={classNames(styles.verticalArrow, styles.menuItem)}>Дизайнеры</li></div>
+                <li key='comand' className={styles.subHeadering}>Команды</li>
+                <div className='padding'>
+                    <li key='prog' className={classNames(styles.verticalArrow, styles.menuItem)}>Программисты</li>
+                </div>
+                <div className='padding'>
+                    <li key='market' className={classNames(styles.verticalArrow, styles.menuItem)}>Маркетологи</li>
+                </div>
+                <div className='padding'>
+                    <li key='desig' className={classNames(styles.verticalArrow, styles.menuItem)}>Дизайнеры</li>
+                </div>
             </ul>
         </div>
     )

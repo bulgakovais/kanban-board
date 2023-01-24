@@ -61,16 +61,6 @@
     justify-content: start;
 }
 
-.circle{
-    width: 10px;
-    height: 10px;
-    background: #8BC34A;
-    border-radius: 100%;
-    margin: 5px 15px 0 0;
-}
-.circleDone{
-    background: #03A9F4;
-}
 .subHeadering{
     font-weight: 700;
     font-size: 12px;
