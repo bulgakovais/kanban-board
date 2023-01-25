@@ -12,4 +12,5 @@
 
 .project_container{
     width: 85%;
+    background: var(--main-bg-color);
 }

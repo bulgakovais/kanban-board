@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     height: 72px;
-    background: #E5E5E5;
+    background: var(--main-bg-color);
 }
 .containerMenu{
     display: flex;
@@ -31,11 +31,11 @@
     padding-bottom: 10px;
     text-decoration: none;
     border-bottom: 2.32px solid transparent;
-    color: #B7B9BB;
+    color: var(--link-color);
 }
 .linkActive{
-    border-bottom: 2.32px solid #4F6EA3;
-    color: #4F6EA3;
+    border-bottom: 2.32px solid var(--link-active-color);
+    color: var(--link-avtive-color);
 }
 
 .icons{

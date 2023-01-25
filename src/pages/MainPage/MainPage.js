@@ -1,4 +1,4 @@
-import { Sidebar, Header } from "../../components"
+import { Sidebar } from "../../components"
 
 
 
@@ -6,6 +6,5 @@ export const MainPage = () => {
 
     return <>
         <Sidebar />
-        {/* <Header /> */}
     </>
 }

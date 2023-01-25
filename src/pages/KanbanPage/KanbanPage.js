@@ -1,10 +1,12 @@
-
+import { Project, ProjectHeader } from "../../components"
+import styles from './KanbanPage.module.css'
 
 export const KanbanPage = () => {
 
     return (
-        <>
-            KANBAN BOARD
-        </>
+        <div className={styles.container}>
+            <ProjectHeader />
+            <Project />
+        </div>
     )
 }
