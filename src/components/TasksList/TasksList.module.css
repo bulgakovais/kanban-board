@@ -1,0 +1,40 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    width: 310px;
+    height: 87.5vh;
+    background: #F2F5FA;
+    border-radius: 10px 10px 0px 0px;
+    padding: 15px;
+    box-sizing: border-box;
+    position: relative;
+}
+.headering{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--main-text-color);
+    margin: 0;
+}
+.headeringItems{
+    display: flex;
+    gap: 10px;
+}
+.headeringMenuAdd{
+    margin: 0;
+}
+.headeringMenu{
+    margin-top:-5px;
+}
+
+.deleteList{
+    width: 50px;
+    height: 20px;
+    background-color: var(--bg-color);
+    font-size: 12px;
+    padding: 5px;
+    margin: 0;
+    position: absolute;
+    top: 35px;
+    right: 5px;
+}

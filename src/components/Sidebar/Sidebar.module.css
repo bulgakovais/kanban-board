@@ -1,6 +1,6 @@
 .container{
     height: 100vh;
-    background-color: #E5E5E5;
+    background-color: var(--main-bg-color);
     padding: 25px 0 0;
     box-sizing: border-box;
 }
@@ -18,7 +18,7 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 29px;
-    color: #333333;
+    color: var(--main-text-color);
     margin: 0;
 }
 .blackCircle{
@@ -39,7 +39,7 @@
 .menuItemMain{
     background-repeat: no-repeat;
     padding-left: 30px;
-    color: #333333;
+    color: var(--main-text-color);
     margin: 0;
 }
 .menuImageDsb{
@@ -65,7 +65,7 @@
     font-weight: 700;
     font-size: 12px;
     line-height: 16px;
-    color: #B7B9BB; 
+    color: var(--link-color); 
     padding-left: 16px;
 }
 

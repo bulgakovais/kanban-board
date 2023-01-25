@@ -21,6 +21,8 @@ export const db = getDatabase(app)
 export const projectsRef = ref(db, 'projects')
 export const projectTaskListRef = ref(db, 'projectTaskList')
 
-export const getTaskListRefById = (projectId) => ref(db, `projectTaskList/${projectId}`)
+// Все TaskList одного проекта
+export const getProjectTaskListRefById = (projectId) => ref(db, `projectTaskList/${projectId}`)
+
 
 

@@ -2,11 +2,13 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom"
 import { setTaskList } from "../../store/taskList/actions";
-import { onValue, update, remove, set } from "firebase/database"
-import { getTaskListRefById, projectTaskListRef } from "../../services/firebase";
-
+import { onValue, update, remove, set, push } from "firebase/database"
+import { getProjectTaskListRefById } from "../../services/firebase";
+import { nanoid } from 'nanoid'
 
 import { getTaskListFromState } from "../../store/taskList/selectors";
+import { TaskList } from "../TasksList/TasksList";
+import styles from "./Project.module.css";
 
 
 export const Project = () => {
@@ -19,30 +21,46 @@ export const Project = () => {
         * записывает его в store
         */
     useEffect(() => {
-        // set(projectTaskListRef, projectLists)
-        const unsubscribe = onValue(projectTaskListRef, (snapShots) => {
+
+        const unsubscribe = onValue(getProjectTaskListRefById(selectorURL.id), (snapShots) => {
 
             let newTaskList = []
 
             snapShots.forEach(snapshot => {
                 newTaskList.push(snapshot.val())
             })
-            newTaskList = newTaskList.filter(el => el.id === Number(selectorURL.id))
-            console.log('newTaskList: ', newTaskList);
             if (!newTaskList) {
                 return newTaskList = []
             }
+
             dispatch(setTaskList(newTaskList))
         })
         return unsubscribe
     }, [selectorURL])
 
+
+    const createNewTaskList = () => {
+        const newTaskList = {
+            id: nanoid(),
+            name: 'Новый столбец'
+        }
+        push(getProjectTaskListRefById(selectorURL.id), newTaskList)
+    }
     const taskList = useSelector(getTaskListFromState)
 
+
     return (
-        <>
-            <p>привет</p>
-        </>
+        <div className={styles.container}>
+
+            <div className={styles.listContainer}>{taskList.map(el => < TaskList list={el} />)}
+                <div className={styles.addTaskList} onClick={createNewTaskList}>
+                    <p>+</p>
+                    <p>Добавить столбец</p>
+                </div>
+            </div>
+
+
+        </div>
     )
 }
 
