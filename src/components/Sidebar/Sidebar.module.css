@@ -1,0 +1,97 @@
+.container{
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    padding: 25px 0 0;
+    box-sizing: border-box;
+}
+.headering{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+.headering div {
+    display: flex;
+}
+.headeringText{
+    font-family: 'Noto Serif TC', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    color: var(--main-text-color);
+    margin: 0;
+}
+.blackCircle{
+    background-image: url('../../img/blackCircle.svg');
+    background-repeat: no-repeat;
+    background-position: left;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+}
+
+.textMenu{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.menuItemMain{
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    color: var(--main-text-color);
+    margin: 0;
+}
+.menuImageDsb{
+    background-image: url('../../img/house.svg');
+}
+.menuImageTask{
+    background-image: url('../../img/check.svg');
+}
+.menuImageProj{
+    background-image: url('../../img/column.svg');
+}
+
+.menuItem{
+    list-style-type: none;
+}
+
+.favoriteItem{
+    display: flex;
+    justify-content: start;
+}
+
+.subHeadering{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--link-color); 
+    padding-left: 16px;
+}
+
+.horizontalArrow{
+    font-weight: 400;
+    background-image: url('../../img//arrow.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.containerOpen{
+    width: fit-content;
+    padding-right: 15px;
+    padding-bottom: 3px;
+    margin-top: 5px;
+}
+
+.verticalArrow{
+    background-image: url('../../img/verticalArrow.svg');
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 20px;
+}
+
+.groupMenu{
+    margin-top: 32px;
+    padding: 0;
+    list-style-type: none;
+}
+

@@ -1,0 +1,87 @@
+.taskListContainer{
+    display: flex;
+    flex-direction: column;
+     width: 310px;
+    height: 87.5vh;
+    background: #F2F5FA;
+    border-radius: 10px 10px 0px 0px;
+    padding: 15px;
+    box-sizing: border-box;
+    position: relative;
+    overflow-y: auto;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.headering{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--main-text-color);
+    margin: 0;
+}
+.headeringItems{
+    display: flex;
+    gap: 10px;
+}
+.headeringMenuAdd{
+    margin: 0;
+    padding: 0 5px 5px 5px;
+}
+.headeringMenu{
+    margin-top:-5px;
+}
+
+.deleteList{
+    width: 50px;
+    height: 20px;
+    background-color: #ff57228a;
+    font-size: 12px;
+    padding: 5px;
+    margin: 0;
+    position: absolute;
+    top: 35px;
+    right: 5px;
+    border-radius: 5px;
+}
+
+.tasksContainer{
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.createTaskContainer{
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgb(21 27 38 / 20%);
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-top: 15px;
+    color: #E5E5E5;
+}
+.createTaskContainer input {
+    border:none;
+    margin-bottom: 10px;
+}
+.createTaskContainer input::placeholder{
+    color: #E5E5E5
+}
+
+.inputPlus{
+    display: flex;
+    justify-content: space-between;
+}
+.inputStyle{
+    width: 80%;
+}
+.plus{
+    margin-top: -3px;
+}
+.imgUser{
+    width: 30px;
+}
+

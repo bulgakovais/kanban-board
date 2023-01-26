@@ -1,0 +1,50 @@
+:root{
+  --main-bg-color: #F2F5FA;
+  --main-text-color:#333333;
+  --link-color: #B7B9BB;
+  --link-active-color:#4F6EA3;
+  --text-color-gray: #808080;
+  --bg-color: #FFFFFF;
+}
+
+.h1{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.textMenu{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.padding{
+    padding: 13px 0 13px 16px;
+  }
+  .padding:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  
+  .circle{
+    width: 10px;
+    height: 10px;
+    background: #8BC34A;
+    border-radius: 100%;
+    margin: 5px 15px 0 0;
+  }
+  .circleDone{
+    background: #03A9F4;
+  }
+  .circleStatus{
+    margin: 0 8px 0 0;
+  }
+
+  .opacity{
+    opacity: 65%;
+  }
+
+  .imgCheck{
+    width: 13px;
+  }
