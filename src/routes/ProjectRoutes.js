@@ -8,6 +8,7 @@ import { ProjectPage } from "../pages/ProjectPage/ProjectPage"
 export const ProjectRoutes = () => {
     return (
         <Routes>
+            <Route path='/' element={<MainPage />} />
             <Route path='/projects' element={<MainPage />} />
             <Route path='/projects/:id' element={<ProjectPage />} />
 

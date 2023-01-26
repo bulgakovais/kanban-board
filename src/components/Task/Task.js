@@ -25,6 +25,7 @@ export const Task = (...el) => {
     const task = el[0].el
     const subtasksByIdTasks = [...subtasks].filter(el => el.taskId === task.id)
 
+    const isStatus = task.status
 
     useEffect(() => {
         const unsubscribe = onValue(getSubtasks, (snapShots) => {
@@ -55,31 +56,30 @@ export const Task = (...el) => {
 
         // changeOpacity(event)
 
-        if (task.status === false) {
-            if (event.target.id === 'branch') {
-                console.log(task.status);
-                setOpenTask(!openTask)
-            }
-
-        } else if (task.status === true) {
-            return
+        // if (task.status === false) {
+        if (event.target.id === 'branch') {
+            console.log(task.status);
+            setOpenTask(!openTask)
         }
+
+        // } else if (task.status === true) {
+        //     return
+        // }
     }
 
 
-    const changeOpacity = (event) => {
+    // const changeOpacity = () => {
 
-        if (event.target.tagName == 'IMG') {
-            if (task.status === true) {
-                event.target.parentNode.classList.remove('opacity')
-            }
-            if (task.status === false) { event.target.parentNode.classList.add('opacity') }
-            else return
-        }
-    }
+    //     if (task.status === true) {
+    //         parentNode.classList.remove('opacity')
+    //     }
+    //     if (task.status === false) { event.target.parentNode.classList.add('opacity') }
+    //     else return
+
+    // }
 
     const createNewSubtask = (event) => {
-        if (event.keyCode == '13') {
+        if (event.key == 'Enter') {
             const newSubtask = {
                 id: nanoid(),
                 taskId: task.id,
@@ -96,69 +96,49 @@ export const Task = (...el) => {
         setInputValue(event.target.value)
     }
 
-
-    function dragStartHandler(e, task) {
-        console.log('drag: ', task);
-    }
-    function dragLeaveHandler(e) {
-
-    }
-    function dragEndHandler(e) {
-
-    }
-    function dragOverHandler(e) {
-        e.preventDefault()
-    }
-    // function dropHandler(e, task) {
-    //     e.preventDefault()
-    //     console.log('drop: ', task);
-    // }
-
+    const containerCSS = classNames(styles.container, {
+        'opacityTrue': isStatus,
+        'opacityFalse:': !isStatus
+    })
 
     return (
-        <div
-            draggable={true}
-            className={classNames(styles.container)}
-            onDragStart={(e) => { dragStartHandler(e, task) }}
-            onDragLeave={(e) => { dragLeaveHandler(e) }}
-            onDragEnd={(e) => { dragEndHandler(e) }}
-            onDragOver={(e) => { dragOverHandler(e) }}
-        // onDrop={(e) => { dropHandler(e, task) }}
-        >
-            <div className={styles.taskName}>
-                <div onClick={checkStatus}>
-                    {task.status ? <img className='imgCheck' src={checkTask} /> : <img className='imgCheck' src={check} />}
+        <>
+            <div className={containerCSS}>
+                <div className={styles.taskName}>
+                    <div onClick={checkStatus}>
+                        {task.status ? <img className='imgCheck' src={checkTask} /> : <img className='imgCheck' src={check} />}
+                    </div>
+                    <p className={styles.text}>{task.name}</p>
                 </div>
-                <p className={styles.text}>{task.name}</p>
-            </div>
 
-            <div className={styles.descripContainer}>
-                <div className={styles.descrLeft}>
-                    <img src={avatar} />
-                    <div className={styles.descrLeftTime}>
-                        <span className={styles.time}>0 ч. / 34 ч.</span>
-                        <span className={styles.time}>до 10 февраля</span>
+                <div className={styles.descripContainer}>
+                    <div className={styles.descrLeft}>
+                        <img src={avatar} />
+                        <div className={styles.descrLeftTime}>
+                            <span className={styles.time}>0 ч. / 34 ч.</span>
+                            <span className={styles.time}>до 10 февраля</span>
+                        </div>
+                    </div>
+                    <div className={styles.branch} onClick={(event) => openTaskHandler(event)} >
+                        <span className={styles.time}>2</span>
+                        <img id='branch' className={styles.imgBranch} src={branch} />
+                        <img src={start} />
                     </div>
                 </div>
-                <div className={styles.branch} onClick={(event) => openTaskHandler(event)} >
-                    <span className={styles.time}>2</span>
-                    <img id='branch' className={styles.imgBranch} src={branch} />
-                    <img src={start} />
+
+                {openTask && <div onKeyDown={e => createNewSubtask(e)}>
+
+                    {subtasksByIdTasks.map(el => <div key={el.id}><Subtask subtasks={el} /></div>)}
+
+                    <input type='text'
+                        className={styles.addSubtask}
+                        value={inputValue}
+                        onChange={e => changeInputValue(e)}
+                        placeholder='+ Добавить подзадачу'>
+                    </input>
                 </div>
+                }
             </div>
-
-            {openTask && <div onKeyDown={e => createNewSubtask(e)}>
-
-                {subtasksByIdTasks.map(el => <div key={el.id}><Subtask subtasks={el} /></div>)}
-
-                <input type='text'
-                    className={styles.addSubtask}
-                    value={inputValue}
-                    onChange={e => changeInputValue(e)}
-                    placeholder='+ Добавить подзадачу'>
-                </input>
-            </div>
-            }
-        </div>
+        </>
     )
 }

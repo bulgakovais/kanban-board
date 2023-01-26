@@ -1,4 +1,4 @@
-import { SET_TASKS, SET_TASKS_ERROR, SET_SUBTASKS, UPDATE_SUBTASKS } from './actions'
+import { SET_TASKS, SET_TASKS_ERROR, SET_SUBTASKS } from './actions'
 
 const initialState = {
     taskList: [],

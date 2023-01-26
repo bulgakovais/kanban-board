@@ -76,7 +76,13 @@ export const TaskList = (el) => {
         setOpenMenu(!openMenu)
     }
 
+    function dragStartHandler(e, el, targetTaskList) {
+        console.log('targetTaskList: ', targetTaskList);
+        console.log('drag: ', el);
+    }
+    function dragLeaveHandler(e) {
 
+    }
     function dropHandler(e, targetTaskList) {
         console.log('taskList: ', targetTaskList);
 
@@ -108,7 +114,15 @@ export const TaskList = (el) => {
             <div
                 className={styles.tasksContainer}>
                 {tasks.map(el =>
-                    <div key={el.id}><Task el={el} /></div>
+                    <div
+                        draggable={true}
+                        className={classNames(styles.container)}
+                        onDragStart={(e) => { dragStartHandler(e, el, targetTaskList) }}
+                        onDragLeave={(e) => { dragLeaveHandler(e) }}
+
+                        key={el.id}>
+                        <Task el={el} />
+                    </div>
                 )}
             </div>
 

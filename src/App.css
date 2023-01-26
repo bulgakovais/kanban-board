@@ -48,3 +48,10 @@
   .imgCheck{
     width: 13px;
   }
+
+  .opacityTrue{
+    opacity: 65%;
+  }
+  .opacityFalse{
+    opacity: 100%;
+  }
