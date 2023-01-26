@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom"
 import { setTaskList } from "../../store/taskList/actions";
-import { onValue, update, remove, set, push } from "firebase/database"
+import { onValue, push } from "firebase/database"
 import { getProjectTaskListRefById } from "../../services/firebase";
 import { nanoid } from 'nanoid'
 

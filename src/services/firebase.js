@@ -24,5 +24,11 @@ export const projectTaskListRef = ref(db, 'projectTaskList')
 // Все TaskList одного проекта
 export const getProjectTaskListRefById = (projectId) => ref(db, `projectTaskList/${projectId}`)
 
+export const getTasks = ref(db, 'taskList')
 
+export const getTasksRefById = (taskId) => ref(db, `taskList/${taskId}`)
 
+export const getSubtasks = ref(db, 'subTasks')
+export const getSubtasksRefById = (subtaskId) => ref(db, `subTasks/${subtaskId}`)
+
+export const getOneSubtask = (subtaskId) => ref(getSubtasksRefById, `/${subtaskId}`)

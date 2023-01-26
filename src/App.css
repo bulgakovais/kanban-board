@@ -40,3 +40,11 @@
   .circleStatus{
     margin: 0 8px 0 0;
   }
+
+  .opacity{
+    opacity: 65%;
+  }
+
+  .imgCheck{
+    width: 13px;
+  }

@@ -8,7 +8,7 @@ const initialState = {
     projectsError: null
 }
 
-export const taskReducer = (state = initialState, { type, payload }) => {
+export const taskListReducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case CREATE_TASK_LIST: {
             return {
