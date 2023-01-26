@@ -7,8 +7,6 @@ export const SET_TASK_ERROR = 'SET_TASK_ERROR'
 
 export const REMOVE_TASK_LIST = 'REMOVE_TASK_LIST'
 
-export const SET_ONE_TASK = 'SET_ONE_TASK'
-export const REMOVE_ONE_TASK = 'REMOVE_ONE_TASK'
 
 export const createTaskList = (taskList) => ({
     type: CREATE_TASK_LIST,

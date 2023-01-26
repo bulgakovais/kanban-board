@@ -1,3 +1,5 @@
 
-export const getTaskListFromState = (state) => state.task.taskList
+export const getTaskListFromState = (state) => state.taskList.taskList
+
+
 

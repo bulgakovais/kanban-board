@@ -2,8 +2,8 @@ import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import { persistReducer, persistStore } from "redux-persist";
 import thunk from "redux-thunk";
 import storage from "redux-persist/lib/storage";
-import { projectReducer } from '../store/project/reducer'
-import { taskReducer } from "./taskList/reducer";
+import { subtaskReducer, taskReducer } from '../store/task/reducer'
+import { taskListReducer } from "./taskList/reducer";
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -14,8 +14,9 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-    project: projectReducer,
-    task: taskReducer
+    task: taskReducer,
+    subtask: subtaskReducer,
+    taskList: taskListReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
